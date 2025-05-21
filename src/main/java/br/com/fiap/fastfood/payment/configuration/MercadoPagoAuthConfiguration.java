@@ -11,6 +11,7 @@ public class MercadoPagoAuthConfiguration {
     public RequestInterceptor requestInterceptor() {
         return requestTemplate -> {
             requestTemplate.header("Authorization", "Bearer TEST-865844660348055-051618-542011f7120c3ba7b944dc63b2beaf2c-161940350");
+            requestTemplate.header("X-Ttl-Store-Preference", "70691600" );
 
         };
     }

@@ -1,6 +1,6 @@
 package br.com.fiap.fastfood.payment.resources;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,20 +8,22 @@ import lombok.Setter;
 @Setter
 public class CaixaRequest {
 
+    @JsonProperty("name")
     private String name;
 
-    @JsonAlias("fixed_amount")
+    @JsonProperty("fixed_amount")
     private boolean fixedAmout;
 
-    @JsonAlias("store_id")
+    @JsonProperty("store_id")
     private Long storeId;
 
-    @JsonAlias("external_store_id")
+    @JsonProperty("external_store_id")
     private String externalStoreId;
 
-    @JsonAlias("external_id")
+    @JsonProperty("external_id")
     private String externalId;
 
+    @JsonProperty("category")
     private Integer category;
 
 }
