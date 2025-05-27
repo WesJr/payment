@@ -15,4 +15,8 @@ public class CaixaService {
     public CaixaResponse createCaixa(CaixaRequest request) {
         return proxy.criarCaixa(request);
     }
+
+    public CaixaResponse getCaixaById(String id) {
+        return proxy.getCaixaById(id);
+    }
 }

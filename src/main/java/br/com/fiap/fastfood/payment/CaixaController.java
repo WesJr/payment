@@ -4,10 +4,7 @@ import br.com.fiap.fastfood.payment.resources.CaixaRequest;
 import br.com.fiap.fastfood.payment.response.CaixaResponse;
 import br.com.fiap.fastfood.payment.service.CaixaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController()
 @RequestMapping("/caixa")
@@ -19,5 +16,11 @@ public class CaixaController {
     @PostMapping("/")
     public CaixaResponse criarCaixa(@RequestBody CaixaRequest request) {
         return service.createCaixa(request);
+    }
+
+    @GetMapping("/{caixa-id}")
+    @ResponseBody
+    public CaixaResponse getCaixa(@PathVariable("caixa-id") String id) {
+        return service.getCaixaById(id);
     }
 }
