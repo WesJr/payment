@@ -1,4 +1,4 @@
-package br.com.fiap.fastfood.payment;
+package br.com.fiap.fastfood.payment.controller;
 
 import br.com.fiap.fastfood.payment.resources.CaixaRequest;
 import br.com.fiap.fastfood.payment.response.CaixaResponse;
