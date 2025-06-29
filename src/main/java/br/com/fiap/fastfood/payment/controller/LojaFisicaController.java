@@ -17,4 +17,9 @@ public class LojaFisicaController {
     public LojaResponse criarLoja(@PathVariable("user_id") String userId, @RequestBody LojaRequest lojaRequest) {
         return service.criarLoja(userId, lojaRequest);
     }
+
+    @GetMapping("users/{user_id}/store/search")
+    public Object buscarLojas(@PathVariable("user_id") String userId) {
+        return service.buscarLojas(userId);
+    }
 }

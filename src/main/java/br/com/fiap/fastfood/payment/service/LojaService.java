@@ -13,7 +13,10 @@ public class LojaService {
     LojaProxy proxy;
 
     public LojaResponse criarLoja(String userId, LojaRequest lojaRequest) {
-        LojaResponse lojaResponse = proxy.criarLoja(userId, lojaRequest);
-        return lojaResponse;
+        return proxy.criarLoja(userId, lojaRequest);
+    }
+
+    public Object buscarLojas(String userId) {
+        return proxy.buscarLojas(userId);
     }
 }
