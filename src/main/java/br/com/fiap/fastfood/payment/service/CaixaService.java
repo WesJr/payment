@@ -1,7 +1,7 @@
 package br.com.fiap.fastfood.payment.service;
 
 import br.com.fiap.fastfood.payment.proxy.CaixaProxy;
-import br.com.fiap.fastfood.payment.resources.CaixaRequest;
+import br.com.fiap.fastfood.payment.request.CaixaRequest;
 import br.com.fiap.fastfood.payment.response.CaixaResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

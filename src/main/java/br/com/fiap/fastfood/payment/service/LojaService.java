@@ -1,8 +1,9 @@
 package br.com.fiap.fastfood.payment.service;
 
 import br.com.fiap.fastfood.payment.proxy.LojaProxy;
-import br.com.fiap.fastfood.payment.resources.LojaRequest;
+import br.com.fiap.fastfood.payment.request.LojaRequest;
 import br.com.fiap.fastfood.payment.response.LojaResponse;
+import br.com.fiap.fastfood.payment.response.LojaResponsePaginada;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ public class LojaService {
         return proxy.criarLoja(userId, lojaRequest);
     }
 
-    public Object buscarLojas(String userId) {
+    public LojaResponsePaginada buscarLojas(String userId) {
         return proxy.buscarLojas(userId);
     }
 }

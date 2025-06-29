@@ -1,4 +1,4 @@
-package br.com.fiap.fastfood.payment.resources;
+package br.com.fiap.fastfood.payment.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

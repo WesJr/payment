@@ -1,7 +1,6 @@
 package br.com.fiap.fastfood.payment.response;
 
-import br.com.fiap.fastfood.payment.resources.BusinessHours;
-import br.com.fiap.fastfood.payment.resources.Location;
+import br.com.fiap.fastfood.payment.request.BusinessHours;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -19,8 +18,8 @@ public class LojaResponse {
     @JsonAlias("name")
     private String name;
 
-    @JsonProperty("date_created")
-    @JsonAlias("date_created")
+    @JsonProperty("date_creation")
+    @JsonAlias("date_creation")
     private String dateCreated;
 
     @JsonProperty("business_hours")
@@ -29,11 +28,10 @@ public class LojaResponse {
 
     @JsonProperty("location")
     @JsonAlias("location")
-    private Location location;
+    private LocationResponse location;
 
     @JsonProperty("external_id")
     @JsonAlias("external_id")
     private String externalId;
-
 
 }

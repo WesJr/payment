@@ -1,7 +1,8 @@
 package br.com.fiap.fastfood.payment.controller;
 
-import br.com.fiap.fastfood.payment.resources.LojaRequest;
+import br.com.fiap.fastfood.payment.request.LojaRequest;
 import br.com.fiap.fastfood.payment.response.LojaResponse;
+import br.com.fiap.fastfood.payment.response.LojaResponsePaginada;
 import br.com.fiap.fastfood.payment.service.LojaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,7 @@ public class LojaFisicaController {
     }
 
     @GetMapping("users/{user_id}/store/search")
-    public Object buscarLojas(@PathVariable("user_id") String userId) {
+    public LojaResponsePaginada buscarLojas(@PathVariable("user_id") String userId) {
         return service.buscarLojas(userId);
     }
 }

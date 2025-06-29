@@ -1,8 +1,9 @@
 package br.com.fiap.fastfood.payment.proxy;
 
 import br.com.fiap.fastfood.payment.configuration.MercadoPagoAuthConfiguration;
-import br.com.fiap.fastfood.payment.resources.LojaRequest;
+import br.com.fiap.fastfood.payment.request.LojaRequest;
 import br.com.fiap.fastfood.payment.response.LojaResponse;
+import br.com.fiap.fastfood.payment.response.LojaResponsePaginada;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,5 +17,5 @@ public interface LojaProxy {
     LojaResponse criarLoja(@PathVariable("user_id") String userId, @RequestBody LojaRequest lojaRequest);
 
     @GetMapping("users/{user_id}/stores/search")
-    Object buscarLojas(@PathVariable("user_id") String userId);
+    LojaResponsePaginada buscarLojas(@PathVariable("user_id") String userId);
 }

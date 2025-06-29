@@ -1,4 +1,4 @@
-package br.com.fiap.fastfood.payment.resources;
+package br.com.fiap.fastfood.payment.request;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Location {
+public class LocationRequest {
 
     @JsonProperty("street_number")
     @JsonAlias({"street_number"})

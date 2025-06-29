@@ -1,4 +1,4 @@
-package br.com.fiap.fastfood.payment.resources;
+package br.com.fiap.fastfood.payment.request;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -26,5 +26,5 @@ public class LojaRequest {
 
     @JsonProperty("location")
     @JsonAlias("location")
-    private Location location;
+    private LocationRequest location;
 }
