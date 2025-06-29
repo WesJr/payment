@@ -23,4 +23,9 @@ public class LojaFisicaController {
     public LojaResponsePaginada buscarLojas(@PathVariable("user_id") String userId, @RequestParam(value = "external_id", required = false) String externalId) {
         return service.buscarLojas(userId, externalId);
     }
+
+    @GetMapping("users/store/{id}")
+    public LojaResponse obterLoja(@PathVariable("id") String id) {
+        return service.obterLoja(id);
+    }
 }

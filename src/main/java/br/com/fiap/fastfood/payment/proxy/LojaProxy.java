@@ -15,4 +15,7 @@ public interface LojaProxy {
 
     @GetMapping("users/{user_id}/stores/search")
     LojaResponsePaginada buscarLojas(@PathVariable("user_id") String userId, @RequestParam(value = "external_id", required = false) String externalId);
+
+    @GetMapping("stores/{id}")
+    LojaResponse obterLoja(@PathVariable("id") String id);
 }

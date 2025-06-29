@@ -20,4 +20,8 @@ public class LojaService {
     public LojaResponsePaginada buscarLojas(String userId, String externalId) {
         return proxy.buscarLojas(userId, externalId);
     }
+
+    public LojaResponse obterLoja(String id) {
+        return proxy.obterLoja(id);
+    }
 }
