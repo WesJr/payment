@@ -25,7 +25,7 @@ public class LojaResponse {
 
     @JsonProperty("business_hours")
     @JsonAlias("business_hours")
-    private Map<String, List<TimeRange>> businessHours;
+    private BusinessHours businessHours;
 
     @JsonProperty("location")
     @JsonAlias("location")

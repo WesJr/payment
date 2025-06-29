@@ -5,14 +5,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-import java.util.Map;
-
 @Getter
 @Setter
-public class BusinessHours {
+public class TimeRange {
 
-    @JsonProperty("business_hours")
-    @JsonAlias("business_hours")
-    private Map<String, List<TimeRange>> businessHours;
+    @JsonProperty("open")
+    @JsonAlias("open")
+    private String open;
+
+    @JsonProperty("close")
+    @JsonAlias("close")
+    private String close;
 }

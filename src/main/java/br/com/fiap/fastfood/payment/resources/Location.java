@@ -9,19 +9,28 @@ import lombok.Setter;
 @Setter
 public class Location {
 
-    @JsonProperty("address_line")
-    @JsonAlias("address_line")
-    private String addressLine;
+    @JsonProperty("street_number")
+    @JsonAlias({"street_number"})
+    private String streetNumber;
+
+    @JsonProperty("street_name")
+    @JsonAlias({"street_name"})
+    private String streetName;
+
+    @JsonProperty("city_name")
+    @JsonAlias({"city_name"})
+    private String cityName;
+
+    @JsonProperty("state_name")
+    @JsonAlias({"state_name"})
+    private String stateName;
 
     @JsonProperty("latitude")
-    @JsonAlias("latitude")
     private double latitude;
 
     @JsonProperty("longitude")
-    @JsonAlias("longitude")
     private double longitude;
 
     @JsonProperty("reference")
-    @JsonAlias("reference")
     private String reference;
 }
