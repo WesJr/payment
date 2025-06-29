@@ -17,7 +17,7 @@ public class LojaService {
         return proxy.criarLoja(userId, lojaRequest);
     }
 
-    public LojaResponsePaginada buscarLojas(String userId) {
-        return proxy.buscarLojas(userId);
+    public LojaResponsePaginada buscarLojas(String userId, String externalId) {
+        return proxy.buscarLojas(userId, externalId);
     }
 }
