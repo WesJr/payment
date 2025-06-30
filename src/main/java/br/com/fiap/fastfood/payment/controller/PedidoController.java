@@ -1,5 +1,6 @@
 package br.com.fiap.fastfood.payment.controller;
 
+import br.com.fiap.fastfood.payment.request.PedidoRequest;
 import br.com.fiap.fastfood.payment.response.PedidoResponse;
 import br.com.fiap.fastfood.payment.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
