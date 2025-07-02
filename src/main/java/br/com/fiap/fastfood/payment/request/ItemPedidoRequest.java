@@ -40,7 +40,4 @@ public class ItemPedidoRequest {
     @JsonAlias({"total_amount"})
     private BigDecimal totalAmount;
 
-    @JsonProperty("sponsor")
-    private SponsorRequest sponsor;
-
 }
