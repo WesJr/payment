@@ -2,6 +2,7 @@ package br.com.fiap.fastfood.payment.service;
 
 import br.com.fiap.fastfood.payment.proxy.PedidoProxy;
 import br.com.fiap.fastfood.payment.request.PedidoRequest;
+import br.com.fiap.fastfood.payment.response.PedidoQrCodeResponse;
 import br.com.fiap.fastfood.payment.response.PedidoResponse;
 import br.com.fiap.fastfood.payment.response.PedidoResponseList;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -17,8 +18,9 @@ public class PedidoService {
     @Autowired
     PedidoProxy proxy;
 
-    public void criarPedido(PedidoRequest request, String userId, String lojaId, String caixaId) {
+    public PedidoQrCodeResponse criarPedido(PedidoRequest request, String userId, String lojaId, String caixaId) {
         proxy.criarPedido(request, userId, lojaId, caixaId);
+        return proxy.criarPedidoQrCode(request,userId, caixaId);
     }
 
     public PedidoResponse obterPedidos(String userId, String caixaId) {
