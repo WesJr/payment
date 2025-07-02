@@ -13,8 +13,8 @@ public class QrPaymentResponse {
     @JsonAlias("external_pos_id")
     private String externalPosId;
 
-    @JsonProperty("static")
-    @JsonAlias("static")
+    @JsonProperty("mode")
+    @JsonAlias("mode")
     private String mode;
 
 

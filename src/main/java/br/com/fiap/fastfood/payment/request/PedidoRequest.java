@@ -1,6 +1,5 @@
 package br.com.fiap.fastfood.payment.request;
 
-import br.com.fiap.fastfood.payment.response.*;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -12,49 +11,29 @@ import java.util.List;
 @Setter
 public class PedidoRequest {
 
-    @JsonProperty("type")
-    private String type;
+    @JsonProperty("external_reference")
+    @JsonAlias({"external_reference"})
+    private String externalReference;
 
-    @JsonProperty("total_amount")
-    @JsonAlias("totalAmount")
-    private String totalAmount;
+    @JsonProperty("title")
+    private String title;
 
     @JsonProperty("description")
     private String description;
 
-    @JsonProperty("external_reference")
-    @JsonAlias("external_reference")
-    private String externalReference;
+    @JsonProperty("notification_url")
+    @JsonAlias({"notification_url"})
+    private String notificationUrl;
 
-    @JsonProperty("expiration_time")
-    @JsonAlias("expiration_time")
-    private String expirationTime;
-
-    @JsonProperty("marketplace_fee")
-    @JsonAlias("marketplace_fee")
-    private String marketplaceFee;
-
-    @JsonProperty("integration_data")
-    @JsonAlias("integration_data")
-    private IntegrationData integrationData;
-
-    @JsonProperty("config")
-    @JsonAlias("config")
-    private Config config;
-
-    @JsonProperty("transactions")
-    @JsonAlias("transactions")
-    private Transactions transactions;
-
-    @JsonProperty("taxes")
-    @JsonAlias("taxes")
-    private Taxes taxes;
+    @JsonProperty("total_amount")
+    @JsonAlias({"total_amount"})
+    private double totalAmount;
 
     @JsonProperty("items")
     @JsonAlias("items")
-    private List<Item> items;
+    private List<ItemPedidoRequest> items;
 
-    @JsonProperty("discounts")
-    @JsonAlias("discounts")
-    private Discounts discounts;
+    @JsonProperty("cash_out")
+    @JsonAlias("cash_out")
+    private cashOutRequest cashOut;
 }

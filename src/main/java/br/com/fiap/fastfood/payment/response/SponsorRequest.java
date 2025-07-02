@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Sponsor {
+public class SponsorRequest {
 
     @JsonAlias("id")
     @JsonProperty("id")

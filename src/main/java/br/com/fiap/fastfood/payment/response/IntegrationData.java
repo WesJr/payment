@@ -38,6 +38,6 @@ public class IntegrationData {
 
     @JsonProperty("sponsor")
     @JsonAlias("sponsor")
-    private Sponsor sponsor;
+    private SponsorRequest sponsor;
 
 }
