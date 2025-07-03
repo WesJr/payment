@@ -18,9 +18,9 @@ public class Endereco {
     @Column(name = "endereco_completo")
     private String addressLine;
 
-    private double latitude;
+    private Double latitude;
 
-    private double longitude;
+    private Double longitude;
 
     @Column(name = "referencia")
     private String reference;

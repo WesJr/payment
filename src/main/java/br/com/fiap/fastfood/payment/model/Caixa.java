@@ -7,24 +7,27 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "loja")
-public class Loja {
+@Table(name = "caixa")
+public class Caixa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "nome")
     private String name;
 
-    @Column(name = "data_criacao")
-    private String dateCreated;
+    @Column(name = "valor_fixo")
+    private boolean fixedAmout;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "loja_id", referencedColumnName = "id")
+    private Loja loja;
 
     @Column(name = "id_externo")
     private String externalId;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "endereco_id", referencedColumnName = "id")
-    private Endereco endereco;
+    @Column(name = "categoria")
+    private Integer category;
 
 }
