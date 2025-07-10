@@ -1,5 +1,7 @@
 package br.com.fiap.fastfood.payment.model;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,12 +17,17 @@ public class Endereco {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "endereco_completo")
-    private String addressLine;
+    @Column(name = "numero")
+    private String streetNumber;
 
-    private Double latitude;
+    @Column(name = "logradouro")
+    private String streetName;
 
-    private Double longitude;
+    @Column(name = "cidade")
+    private String cityName;
+
+    @Column(name = "estado")
+    private String stateName;
 
     @Column(name = "referencia")
     private String reference;

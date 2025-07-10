@@ -14,9 +14,6 @@ public class Loja {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "store_id")
-    private String storeId;
-
     @Column(name = "nome")
     private String name;
 
