@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface LojaRepository extends JpaRepository<Loja, Long> {
 
+    Loja findByExternalId(String externalId);
 }

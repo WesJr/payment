@@ -3,6 +3,7 @@ package br.com.fiap.fastfood.payment.service;
 import br.com.fiap.fastfood.payment.model.Endereco;
 import br.com.fiap.fastfood.payment.model.Loja;
 import br.com.fiap.fastfood.payment.proxy.LojaProxy;
+import br.com.fiap.fastfood.payment.repository.LojaRepository;
 import br.com.fiap.fastfood.payment.request.LojaRequest;
 import br.com.fiap.fastfood.payment.response.LojaResponse;
 import br.com.fiap.fastfood.payment.response.LojaResponsePaginada;
@@ -14,6 +15,9 @@ public class LojaService {
 
     @Autowired
     LojaProxy proxy;
+
+    @Autowired
+    LojaRepository repository;
 
     @Autowired
     EnderecoService enderecoService;
@@ -35,6 +39,8 @@ public class LojaService {
         loja.setExternalId(loja.getExternalId());
         loja.setEndereco(endereco1);
 
+        repository.save(loja);
+
         return proxy.criarLoja(userId, lojaRequest);
     }
 
@@ -44,5 +50,9 @@ public class LojaService {
 
     public LojaResponse obterLoja(String id) {
         return proxy.obterLoja(id);
+    }
+
+    public Loja getLojaByExternalId(String externalId) {
+        return repository.findByExternalId(externalId);
     }
 }

@@ -1,10 +1,8 @@
 package br.com.fiap.fastfood.payment.service;
 
 import br.com.fiap.fastfood.payment.model.Caixa;
-import br.com.fiap.fastfood.payment.model.Loja;
 import br.com.fiap.fastfood.payment.proxy.CaixaProxy;
 import br.com.fiap.fastfood.payment.repository.CaixaRepository;
-import br.com.fiap.fastfood.payment.repository.LojaRepository;
 import br.com.fiap.fastfood.payment.request.CaixaRequest;
 import br.com.fiap.fastfood.payment.response.CaixaResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +17,9 @@ public class CaixaService {
     @Autowired
     CaixaRepository repository;
 
+    @Autowired
+    LojaService lojaService;
+
     public CaixaResponse createCaixa(CaixaRequest request) {
         Caixa caixa = new Caixa();
 
@@ -26,6 +27,7 @@ public class CaixaService {
         caixa.setFixedAmout(request.isFixedAmout());
         caixa.setExternalId(request.getExternalId());
         caixa.setCategory(request.getCategory());
+        caixa.setLoja(lojaService.getLojaByExternalId(request.getExternalStoreId()));
 
         repository.save(caixa);
         return proxy.criarCaixa(request);
