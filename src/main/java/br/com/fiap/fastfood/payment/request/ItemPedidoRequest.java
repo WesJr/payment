@@ -1,6 +1,5 @@
 package br.com.fiap.fastfood.payment.request;
 
-import br.com.fiap.fastfood.payment.response.SponsorRequest;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

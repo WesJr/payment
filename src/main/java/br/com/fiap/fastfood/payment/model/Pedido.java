@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -27,6 +29,7 @@ public class Pedido {
     private String notificationUrl;
 
     @Column(name = "valor_total")
-    private double totalAmount;
+    private Double totalAmount;
+
 
 }
