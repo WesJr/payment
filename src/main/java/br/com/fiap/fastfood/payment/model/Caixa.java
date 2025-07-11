@@ -24,7 +24,7 @@ public class Caixa {
     @JoinColumn(name = "loja_id", referencedColumnName = "id")
     private Loja loja;
 
-    @Column(name = "id_externo")
+    @Column(name = "id_externo", unique = true)
     private String externalId;
 
     @Column(name = "categoria")
