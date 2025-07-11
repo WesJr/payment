@@ -13,9 +13,9 @@ public class SpringFoxConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Minha API 🚀")
+                        .title("Pagamentos Mercado Pago")
                         .version("1.0")
-                        .description("API de exemplo com Spring Boot 3.x + Springdoc OpenAPI")
+                        .description("API de pagamento com geração de QRCode pelo mercado pago")
                         .contact(new Contact()
                                 .name("Wesley Junior De Souza")
                                 .email("wesjuniorsouza@gmail.com")));
