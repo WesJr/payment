@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 
 @Getter
 @Setter
-public class cashOutRequest {
+public class CashOutRequest {
 
     @JsonProperty("amount")
     private BigDecimal amount;

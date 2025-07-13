@@ -9,7 +9,6 @@ import br.com.fiap.fastfood.payment.request.ItemPedidoRequest;
 import br.com.fiap.fastfood.payment.request.PedidoRequest;
 import br.com.fiap.fastfood.payment.response.PedidoQrCodeResponse;
 import br.com.fiap.fastfood.payment.response.PedidoResponse;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,14 +16,15 @@ import java.util.List;
 @Service
 public class PedidoService {
 
-    @Autowired
-    PedidoProxy proxy;
+    private final PedidoProxy proxy;
+    private final PedidoRepository repository;
+    private final ItemRepository itemRepository;
 
-    @Autowired
-    PedidoRepository repository;
-
-    @Autowired
-    ItemRepository itemRepository;
+    public PedidoService(PedidoProxy proxy, PedidoRepository repository, ItemRepository itemRepository) {
+        this.proxy = proxy;
+        this.repository = repository;
+        this.itemRepository = itemRepository;
+    }
 
     public PedidoQrCodeResponse criarPedido(PedidoRequest request, String userId, String lojaId, String caixaId) {
 

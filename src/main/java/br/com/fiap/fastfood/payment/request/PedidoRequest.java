@@ -36,7 +36,7 @@ public class PedidoRequest {
 
     @JsonProperty("cash_out")
     @JsonAlias("cash_out")
-    private cashOutRequest cashOut;
+    private CashOutRequest cashOut;
 
     @JsonProperty("sponsor")
     private SponsorRequest sponsor;

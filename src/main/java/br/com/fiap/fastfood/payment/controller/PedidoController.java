@@ -4,15 +4,17 @@ import br.com.fiap.fastfood.payment.request.PedidoRequest;
 import br.com.fiap.fastfood.payment.response.PedidoQrCodeResponse;
 import br.com.fiap.fastfood.payment.response.PedidoResponse;
 import br.com.fiap.fastfood.payment.service.PedidoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/pedido")
 public class PedidoController {
 
-    @Autowired
-    PedidoService service;
+    private final PedidoService service;
+
+    public PedidoController(PedidoService service) {
+        this.service = service;
+    }
 
     @PutMapping("criar/user/{user_id}/loja/{external_store_id}/caixa/{external_pos_id}/orders")
     public PedidoQrCodeResponse criarPedido(@RequestBody PedidoRequest request,

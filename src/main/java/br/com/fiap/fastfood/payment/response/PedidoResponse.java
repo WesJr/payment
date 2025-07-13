@@ -1,7 +1,7 @@
 package br.com.fiap.fastfood.payment.response;
 
 import br.com.fiap.fastfood.payment.request.ItemPedidoRequest;
-import br.com.fiap.fastfood.payment.request.cashOutRequest;
+import br.com.fiap.fastfood.payment.request.CashOutRequest;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -42,7 +42,7 @@ public class PedidoResponse {
 
     @JsonProperty("cash_out")
     @JsonAlias("cash_out")
-    private cashOutRequest cashOut;
+    private CashOutRequest cashOut;
 
     @JsonProperty("sponsor")
     private SponsorRequest sponsor;
