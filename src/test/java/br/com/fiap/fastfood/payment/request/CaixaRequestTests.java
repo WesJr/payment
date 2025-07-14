@@ -1,6 +1,5 @@
-package br.com.fiap.fastfood.payment;
+package br.com.fiap.fastfood.payment.request;
 
-import br.com.fiap.fastfood.payment.request.CaixaRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 

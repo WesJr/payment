@@ -65,7 +65,7 @@ class PedidoControllerTest {
                 Collections.singletonList(item), null, null
         );
 
-        Mockito.when(pedidoService.obterPedidos(eq("u1"), eq("p1"))).thenReturn(mockResponse);
+        Mockito.when(pedidoService.obterPedidos(("u1"), ("p1"))).thenReturn(mockResponse);
 
         mockMvc.perform(get("/pedido/obter/user/u1/caixa/p1/orders"))
                 .andExpect(status().isOk())
