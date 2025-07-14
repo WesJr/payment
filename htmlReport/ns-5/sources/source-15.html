@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>Coverage Report > PedidoQrCodeResponse</title>
+  <title>Coverage Report > PedidoResponse</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -22,14 +22,14 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">br.com.fiap.fastfood.payment.response</a>
 </div>
 
-<h1>Coverage Summary for Class: PedidoQrCodeResponse (br.com.fiap.fastfood.payment.response)</h1>
+<h1>Coverage Summary for Class: PedidoResponse (br.com.fiap.fastfood.payment.response)</h1>
 
 <table class="coverageStats">
 <tr>
   <th class="name">Class</th>
 </tr>
 <tr>
-  <td class="name">PedidoQrCodeResponse</td>
+  <td class="name">PedidoResponse</td>
 </tr>
 
 </table>
@@ -41,6 +41,8 @@ Current scope:     <a href="../../index.html">all classes</a>
 <pre>
 <code class="sourceCode" id="sourceCode">&nbsp;package br.com.fiap.fastfood.payment.response;
 &nbsp;
+&nbsp;import br.com.fiap.fastfood.payment.request.ItemPedidoRequest;
+&nbsp;import br.com.fiap.fastfood.payment.request.CashOutRequest;
 &nbsp;import com.fasterxml.jackson.annotation.JsonAlias;
 &nbsp;import com.fasterxml.jackson.annotation.JsonProperty;
 &nbsp;import lombok.AllArgsConstructor;
@@ -48,19 +50,47 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import lombok.NoArgsConstructor;
 &nbsp;import lombok.Setter;
 &nbsp;
+&nbsp;import java.math.BigDecimal;
+&nbsp;import java.util.List;
+&nbsp;
 &nbsp;@Getter
 &nbsp;@Setter
-&nbsp;@NoArgsConstructor
 &nbsp;@AllArgsConstructor
-&nbsp;public class PedidoQrCodeResponse {
+&nbsp;@NoArgsConstructor
+&nbsp;public class PedidoResponse {
 &nbsp;
-&nbsp;    @JsonProperty(&quot;qr_data&quot;)
-&nbsp;    @JsonAlias(&quot;qr_data&quot;)
-&nbsp;    private String qrData;
+&nbsp;    @JsonProperty(&quot;external_reference&quot;)
+&nbsp;    @JsonAlias({&quot;external_reference&quot;})
+&nbsp;    private String externalReference;
 &nbsp;
-&nbsp;    @JsonProperty(&quot;in_store_order_id&quot;)
-&nbsp;    @JsonAlias(&quot;in_store_order_id&quot;)
-&nbsp;    private String inStoreOrderId;
+&nbsp;    @JsonProperty(&quot;title&quot;)
+&nbsp;    private String title;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;description&quot;)
+&nbsp;    private String description;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;notification_url&quot;)
+&nbsp;    @JsonAlias({&quot;notification_url&quot;})
+&nbsp;    private String notificationUrl;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;total_amount&quot;)
+&nbsp;    @JsonAlias({&quot;total_amount&quot;})
+&nbsp;    private BigDecimal totalAmount;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;expiration_date&quot;)
+&nbsp;    @JsonAlias(&quot;expiration_date&quot;)
+&nbsp;    private String expirationDate;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;items&quot;)
+&nbsp;    @JsonAlias(&quot;items&quot;)
+&nbsp;    private List&lt;ItemPedidoRequest&gt; items;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;cash_out&quot;)
+&nbsp;    @JsonAlias(&quot;cash_out&quot;)
+&nbsp;    private CashOutRequest cashOut;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;sponsor&quot;)
+&nbsp;    private SponsorRequest sponsor;
 &nbsp;}
 </code>
 </pre>
@@ -85,7 +115,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-07-13 23:57</div>
+    <div style="float:right;">generated on 2025-07-14 00:22</div>
 </div>
 </body>
 </html>

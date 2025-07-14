@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>Coverage Report > PedidoResponse</title>
+  <title>Coverage Report > CaixaResponse</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -22,14 +22,14 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">br.com.fiap.fastfood.payment.response</a>
 </div>
 
-<h1>Coverage Summary for Class: PedidoResponse (br.com.fiap.fastfood.payment.response)</h1>
+<h1>Coverage Summary for Class: CaixaResponse (br.com.fiap.fastfood.payment.response)</h1>
 
 <table class="coverageStats">
 <tr>
   <th class="name">Class</th>
 </tr>
 <tr>
-  <td class="name">PedidoResponse</td>
+  <td class="name">CaixaResponse</td>
 </tr>
 
 </table>
@@ -41,8 +41,6 @@ Current scope:     <a href="../../index.html">all classes</a>
 <pre>
 <code class="sourceCode" id="sourceCode">&nbsp;package br.com.fiap.fastfood.payment.response;
 &nbsp;
-&nbsp;import br.com.fiap.fastfood.payment.request.ItemPedidoRequest;
-&nbsp;import br.com.fiap.fastfood.payment.request.CashOutRequest;
 &nbsp;import com.fasterxml.jackson.annotation.JsonAlias;
 &nbsp;import com.fasterxml.jackson.annotation.JsonProperty;
 &nbsp;import lombok.AllArgsConstructor;
@@ -50,47 +48,71 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import lombok.NoArgsConstructor;
 &nbsp;import lombok.Setter;
 &nbsp;
-&nbsp;import java.math.BigDecimal;
-&nbsp;import java.util.List;
-&nbsp;
 &nbsp;@Getter
 &nbsp;@Setter
 &nbsp;@AllArgsConstructor
 &nbsp;@NoArgsConstructor
-&nbsp;public class PedidoResponse {
+&nbsp;public class CaixaResponse {
 &nbsp;
-&nbsp;    @JsonProperty(&quot;external_reference&quot;)
-&nbsp;    @JsonAlias({&quot;external_reference&quot;})
-&nbsp;    private String externalReference;
+&nbsp;    @JsonProperty(&quot;id&quot;)
+&nbsp;    @JsonAlias(&quot;id&quot;)
+&nbsp;    private Long id;
 &nbsp;
-&nbsp;    @JsonProperty(&quot;title&quot;)
-&nbsp;    private String title;
+&nbsp;    @JsonProperty(&quot;qr&quot;)
+&nbsp;    @JsonAlias(&quot;qr&quot;)
+&nbsp;    private QrResponse qr;
 &nbsp;
-&nbsp;    @JsonProperty(&quot;description&quot;)
-&nbsp;    private String description;
+&nbsp;    @JsonProperty(&quot;status&quot;)
+&nbsp;    @JsonAlias(&quot;status&quot;)
+&nbsp;    private String status;
 &nbsp;
-&nbsp;    @JsonProperty(&quot;notification_url&quot;)
-&nbsp;    @JsonAlias({&quot;notification_url&quot;})
-&nbsp;    private String notificationUrl;
+&nbsp;    @JsonProperty(&quot;date_created&quot;)
+&nbsp;    @JsonAlias(&quot;date_created&quot;)
+&nbsp;    private String dateCreated;
 &nbsp;
-&nbsp;    @JsonProperty(&quot;total_amount&quot;)
-&nbsp;    @JsonAlias({&quot;total_amount&quot;})
-&nbsp;    private BigDecimal totalAmount;
+&nbsp;    @JsonProperty(&quot;date_last_updated&quot;)
+&nbsp;    @JsonAlias(&quot;date_last_updated&quot;)
+&nbsp;    private String dateLastUpdated;
 &nbsp;
-&nbsp;    @JsonProperty(&quot;expiration_date&quot;)
-&nbsp;    @JsonAlias(&quot;expiration_date&quot;)
-&nbsp;    private String expirationDate;
+&nbsp;    @JsonProperty(&quot;uuid&quot;)
+&nbsp;    @JsonAlias(&quot;uuid&quot;)
+&nbsp;    private String uuid;
 &nbsp;
-&nbsp;    @JsonProperty(&quot;items&quot;)
-&nbsp;    @JsonAlias(&quot;items&quot;)
-&nbsp;    private List&lt;ItemPedidoRequest&gt; items;
+&nbsp;    @JsonProperty(&quot;user_id&quot;)
+&nbsp;    @JsonAlias(&quot;user_id&quot;)
+&nbsp;    private long userId;
 &nbsp;
-&nbsp;    @JsonProperty(&quot;cash_out&quot;)
-&nbsp;    @JsonAlias(&quot;cash_out&quot;)
-&nbsp;    private CashOutRequest cashOut;
+&nbsp;    @JsonProperty(&quot;name&quot;)
+&nbsp;    @JsonAlias(&quot;name&quot;)
+&nbsp;    private String name;
 &nbsp;
-&nbsp;    @JsonProperty(&quot;sponsor&quot;)
-&nbsp;    private SponsorRequest sponsor;
+&nbsp;    @JsonProperty(&quot;fixed_amount&quot;)
+&nbsp;    @JsonAlias(&quot;fixed_amount&quot;)
+&nbsp;    private boolean fixedAmount;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;category&quot;)
+&nbsp;    @JsonAlias(&quot;category&quot;)
+&nbsp;    private int category;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;store_id&quot;)
+&nbsp;    @JsonAlias(&quot;store_id&quot;)
+&nbsp;    private String storeId;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;external_store_id&quot;)
+&nbsp;    @JsonAlias(&quot;external_store_id&quot;)
+&nbsp;    private String externalStoreId;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;external_id&quot;)
+&nbsp;    @JsonAlias(&quot;external_id&quot;)
+&nbsp;    private String externalId;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;site&quot;)
+&nbsp;    @JsonAlias(&quot;site&quot;)
+&nbsp;    private String site;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;qr_code&quot;)
+&nbsp;    @JsonAlias(&quot;qr_code&quot;)
+&nbsp;    private String qrCode;
 &nbsp;}
 </code>
 </pre>
@@ -115,7 +137,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-07-13 23:57</div>
+    <div style="float:right;">generated on 2025-07-14 00:22</div>
 </div>
 </body>
 </html>

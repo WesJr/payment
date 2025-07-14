@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>Coverage Report > Caixa</title>
+  <title>Coverage Report > Pedido</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -22,7 +22,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">br.com.fiap.fastfood.payment.model</a>
 </div>
 
-<h1>Coverage Summary for Class: Caixa (br.com.fiap.fastfood.payment.model)</h1>
+<h1>Coverage Summary for Class: Pedido (br.com.fiap.fastfood.payment.model)</h1>
 
 <table class="coverageStats">
 
@@ -30,10 +30,10 @@ Current scope:     <a href="../../index.html">all classes</a>
   <th class="name">Class</th>
 </tr>
   <tr>
-    <td class="name">Caixa$HibernateInstantiator</td>
+    <td class="name">Pedido$HibernateInstantiator</td>
   </tr>
   <tr>
-    <td class="name">Caixa$HibernateProxy</td>
+    <td class="name">Pedido$HibernateProxy</td>
   </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
@@ -53,31 +53,31 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;@Getter
 &nbsp;@Setter
 &nbsp;@Entity
-&nbsp;@Table(name = &quot;caixa&quot;)
 &nbsp;@AllArgsConstructor
 &nbsp;@NoArgsConstructor
 &nbsp;@ToString
-&nbsp;public class Caixa {
+&nbsp;@Table(name = &quot;pedido&quot;)
+&nbsp;public class Pedido {
 &nbsp;
 &nbsp;    @Id
 &nbsp;    @GeneratedValue(strategy = GenerationType.IDENTITY)
 &nbsp;    private Long id;
 &nbsp;
-&nbsp;    @Column(name = &quot;nome&quot;)
-&nbsp;    private String name;
+&nbsp;    @Column(name = &quot;referencia_externa&quot;)
+&nbsp;    private String externalReference;
 &nbsp;
-&nbsp;    @Column(name = &quot;valor_fixo&quot;)
-&nbsp;    private boolean fixedAmout;
+&nbsp;    @Column(name = &quot;titulo&quot;)
+&nbsp;    private String title;
 &nbsp;
-&nbsp;    @OneToOne(cascade = CascadeType.ALL)
-&nbsp;    @JoinColumn(name = &quot;loja_id&quot;, referencedColumnName = &quot;id&quot;)
-&nbsp;    private Loja loja;
+&nbsp;    @Column(name = &quot;descricao&quot;)
+&nbsp;    private String description;
 &nbsp;
-&nbsp;    @Column(name = &quot;id_externo&quot;, unique = true)
-&nbsp;    private String externalId;
+&nbsp;    @Column(name = &quot;url_notificacao&quot;)
+&nbsp;    private String notificationUrl;
 &nbsp;
-&nbsp;    @Column(name = &quot;categoria&quot;)
-&nbsp;    private Integer category;
+&nbsp;    @Column(name = &quot;valor_total&quot;)
+&nbsp;    private Double totalAmount;
+&nbsp;
 &nbsp;
 &nbsp;}
 </code>
@@ -103,7 +103,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-07-13 23:57</div>
+    <div style="float:right;">generated on 2025-07-14 00:22</div>
 </div>
 </body>
 </html>

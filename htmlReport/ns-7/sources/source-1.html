@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>Coverage Report > CaixaProxy</title>
+  <title>Coverage Report > LojaProxy</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -22,7 +22,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">br.com.fiap.fastfood.payment.proxy</a>
 </div>
 
-<h1>Coverage Summary for Class: CaixaProxy (br.com.fiap.fastfood.payment.proxy)</h1>
+<h1>Coverage Summary for Class: LojaProxy (br.com.fiap.fastfood.payment.proxy)</h1>
 
 <table class="coverageStats">
 
@@ -30,13 +30,13 @@ Current scope:     <a href="../../index.html">all classes</a>
   <th class="name">Class</th>
 </tr>
   <tr>
-    <td class="name">CaixaProxy$MockitoMock$KTT32X1g</td>
+    <td class="name">LojaProxy$MockitoMock$PjmTNQKZ</td>
   </tr>
   <tr>
-    <td class="name">CaixaProxy$MockitoMock$KTT32X1g$auxiliary$RXap3oKh</td>
+    <td class="name">LojaProxy$MockitoMock$PjmTNQKZ$auxiliary$Ijb9zjzd</td>
   </tr>
   <tr>
-    <td class="name">CaixaProxy$MockitoMock$KTT32X1g$auxiliary$uDZNYBpC</td>
+    <td class="name">LojaProxy$MockitoMock$PjmTNQKZ$auxiliary$V2vojvuQ</td>
   </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
@@ -51,22 +51,23 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;package br.com.fiap.fastfood.payment.proxy;
 &nbsp;
 &nbsp;import br.com.fiap.fastfood.payment.configuration.MercadoPagoAuthConfiguration;
-&nbsp;import br.com.fiap.fastfood.payment.request.CaixaRequest;
-&nbsp;import br.com.fiap.fastfood.payment.response.CaixaResponse;
+&nbsp;import br.com.fiap.fastfood.payment.request.LojaRequest;
+&nbsp;import br.com.fiap.fastfood.payment.response.LojaResponse;
+&nbsp;import br.com.fiap.fastfood.payment.response.LojaResponsePaginada;
 &nbsp;import org.springframework.cloud.openfeign.FeignClient;
-&nbsp;import org.springframework.web.bind.annotation.GetMapping;
-&nbsp;import org.springframework.web.bind.annotation.PathVariable;
-&nbsp;import org.springframework.web.bind.annotation.PostMapping;
-&nbsp;import org.springframework.web.bind.annotation.RequestBody;
+&nbsp;import org.springframework.web.bind.annotation.*;
 &nbsp;
-&nbsp;@FeignClient(name = &quot;CaixaProxy&quot;, url = &quot;https://api.mercadopago.com&quot;, configuration = MercadoPagoAuthConfiguration.class)
-&nbsp;public interface CaixaProxy {
+&nbsp;@FeignClient(name = &quot;LojaProxy&quot;, url = &quot;https://api.mercadopago.com&quot;, configuration = MercadoPagoAuthConfiguration.class)
+&nbsp;public interface LojaProxy {
 &nbsp;
-&nbsp;    @PostMapping(&quot;/pos&quot;)
-&nbsp;    CaixaResponse criarCaixa(@RequestBody CaixaRequest request);
+&nbsp;    @PostMapping(&quot;/users/{user_id}/stores&quot;)
+&nbsp;    LojaResponse criarLoja(@PathVariable(&quot;user_id&quot;) String userId, @RequestBody LojaRequest lojaRequest);
 &nbsp;
-&nbsp;    @GetMapping(&quot;/pos/{id}&quot;)
-&nbsp;    CaixaResponse getCaixaById(@PathVariable(&quot;id&quot;) String id);
+&nbsp;    @GetMapping(&quot;users/{user_id}/stores/search&quot;)
+&nbsp;    LojaResponsePaginada buscarLojas(@PathVariable(&quot;user_id&quot;) String userId, @RequestParam(value = &quot;external_id&quot;, required = false) String externalId);
+&nbsp;
+&nbsp;    @GetMapping(&quot;stores/{id}&quot;)
+&nbsp;    LojaResponse obterLoja(@PathVariable(&quot;id&quot;) String id);
 &nbsp;}
 </code>
 </pre>
@@ -91,7 +92,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-07-13 23:57</div>
+    <div style="float:right;">generated on 2025-07-14 00:22</div>
 </div>
 </body>
 </html>

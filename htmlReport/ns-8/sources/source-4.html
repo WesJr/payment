@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>Coverage Report > Loja</title>
+  <title>Coverage Report > ItemPedido</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -22,7 +22,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">br.com.fiap.fastfood.payment.model</a>
 </div>
 
-<h1>Coverage Summary for Class: Loja (br.com.fiap.fastfood.payment.model)</h1>
+<h1>Coverage Summary for Class: ItemPedido (br.com.fiap.fastfood.payment.model)</h1>
 
 <table class="coverageStats">
 
@@ -30,10 +30,10 @@ Current scope:     <a href="../../index.html">all classes</a>
   <th class="name">Class</th>
 </tr>
   <tr>
-    <td class="name">Loja$HibernateInstantiator</td>
+    <td class="name">ItemPedido$HibernateInstantiator</td>
   </tr>
   <tr>
-    <td class="name">Loja$HibernateProxy</td>
+    <td class="name">ItemPedido$HibernateProxy</td>
   </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
@@ -50,32 +50,45 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import jakarta.persistence.*;
 &nbsp;import lombok.*;
 &nbsp;
+&nbsp;import java.math.BigDecimal;
+&nbsp;
 &nbsp;@Getter
 &nbsp;@Setter
 &nbsp;@Entity
-&nbsp;@Table(name = &quot;loja&quot;)
+&nbsp;@Table(name = &quot;item_pedido&quot;)
 &nbsp;@AllArgsConstructor
 &nbsp;@NoArgsConstructor
 &nbsp;@ToString
-&nbsp;public class Loja {
+&nbsp;public class ItemPedido {
 &nbsp;
 &nbsp;    @Id
 &nbsp;    @GeneratedValue(strategy = GenerationType.IDENTITY)
 &nbsp;    private Long id;
 &nbsp;
-&nbsp;    @Column(name = &quot;nome&quot;)
-&nbsp;    private String name;
+&nbsp;    @Column(name = &quot;codigo_produto&quot;)
+&nbsp;    private String skuNumber;
 &nbsp;
-&nbsp;    @Column(name = &quot;data_criacao&quot;)
-&nbsp;    private String dateCreated;
+&nbsp;    @Column(name = &quot;categoria&quot;)
+&nbsp;    private String category;
 &nbsp;
-&nbsp;    @Column(name = &quot;id_externo&quot;)
-&nbsp;    private String externalId;
+&nbsp;    @Column(name = &quot;titulo&quot;)
+&nbsp;    private String title;
 &nbsp;
-&nbsp;    @OneToOne(cascade = CascadeType.ALL)
-&nbsp;    @JoinColumn(name = &quot;endereco_id&quot;, referencedColumnName = &quot;id&quot;)
-&nbsp;    private Endereco endereco;
+&nbsp;    @Column(name = &quot;descricao&quot;)
+&nbsp;    private String description;
 &nbsp;
+&nbsp;    @Column(name = &quot;preco_unitario&quot;)
+&nbsp;    private BigDecimal unitPrice;
+&nbsp;
+&nbsp;    @Column(name = &quot;quantidade&quot;)
+&nbsp;    private int quantity;
+&nbsp;
+&nbsp;    @Column(name = &quot;valor_total&quot;)
+&nbsp;    private BigDecimal totalAmount;
+&nbsp;
+&nbsp;    @ManyToOne
+&nbsp;    @JoinColumn(name = &quot;pedido_id&quot;)
+&nbsp;    private Pedido pedido;
 &nbsp;}
 </code>
 </pre>
@@ -100,7 +113,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-07-13 23:57</div>
+    <div style="float:right;">generated on 2025-07-14 00:22</div>
 </div>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>Coverage Report > CaixaRepository</title>
+  <title>Coverage Report > LojaRepository</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -22,7 +22,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">br.com.fiap.fastfood.payment.repository</a>
 </div>
 
-<h1>Coverage Summary for Class: CaixaRepository (br.com.fiap.fastfood.payment.repository)</h1>
+<h1>Coverage Summary for Class: LojaRepository (br.com.fiap.fastfood.payment.repository)</h1>
 
 <table class="coverageStats">
 
@@ -30,13 +30,13 @@ Current scope:     <a href="../../index.html">all classes</a>
   <th class="name">Class</th>
 </tr>
   <tr>
-    <td class="name">CaixaRepository$MockitoMock$ixRxZFXb</td>
+    <td class="name">LojaRepository$MockitoMock$glGclNXB</td>
   </tr>
   <tr>
-    <td class="name">CaixaRepository$MockitoMock$ixRxZFXb$auxiliary$gOCnvBlD</td>
+    <td class="name">LojaRepository$MockitoMock$glGclNXB$auxiliary$IaGHoZbp</td>
   </tr>
   <tr>
-    <td class="name">CaixaRepository$MockitoMock$ixRxZFXb$auxiliary$GzNz7t3p</td>
+    <td class="name">LojaRepository$MockitoMock$glGclNXB$auxiliary$RjBrNlOT</td>
   </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
@@ -50,12 +50,14 @@ Current scope:     <a href="../../index.html">all classes</a>
 <pre>
 <code class="sourceCode" id="sourceCode">&nbsp;package br.com.fiap.fastfood.payment.repository;
 &nbsp;
-&nbsp;import br.com.fiap.fastfood.payment.model.Caixa;
+&nbsp;import br.com.fiap.fastfood.payment.model.Loja;
 &nbsp;import org.springframework.data.jpa.repository.JpaRepository;
 &nbsp;import org.springframework.stereotype.Repository;
 &nbsp;
 &nbsp;@Repository
-&nbsp;public interface CaixaRepository extends JpaRepository&lt;Caixa, Long&gt; {
+&nbsp;public interface LojaRepository extends JpaRepository&lt;Loja, Long&gt; {
+&nbsp;
+&nbsp;    Loja findByExternalId(String externalId);
 &nbsp;}
 </code>
 </pre>
@@ -80,7 +82,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-07-13 23:57</div>
+    <div style="float:right;">generated on 2025-07-14 00:22</div>
 </div>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>Coverage Report > Pedido</title>
+  <title>Coverage Report > Endereco</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -22,7 +22,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">br.com.fiap.fastfood.payment.model</a>
 </div>
 
-<h1>Coverage Summary for Class: Pedido (br.com.fiap.fastfood.payment.model)</h1>
+<h1>Coverage Summary for Class: Endereco (br.com.fiap.fastfood.payment.model)</h1>
 
 <table class="coverageStats">
 
@@ -30,10 +30,10 @@ Current scope:     <a href="../../index.html">all classes</a>
   <th class="name">Class</th>
 </tr>
   <tr>
-    <td class="name">Pedido$HibernateInstantiator</td>
+    <td class="name">Endereco$HibernateInstantiator</td>
   </tr>
   <tr>
-    <td class="name">Pedido$HibernateProxy</td>
+    <td class="name">Endereco$HibernateProxy</td>
   </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
@@ -50,36 +50,37 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import jakarta.persistence.*;
 &nbsp;import lombok.*;
 &nbsp;
+&nbsp;
 &nbsp;@Getter
 &nbsp;@Setter
 &nbsp;@Entity
+&nbsp;@Table(name = &quot;endereco&quot;)
+&nbsp;@ToString
 &nbsp;@AllArgsConstructor
 &nbsp;@NoArgsConstructor
-&nbsp;@ToString
-&nbsp;@Table(name = &quot;pedido&quot;)
-&nbsp;public class Pedido {
+&nbsp;public class Endereco {
 &nbsp;
 &nbsp;    @Id
 &nbsp;    @GeneratedValue(strategy = GenerationType.IDENTITY)
 &nbsp;    private Long id;
 &nbsp;
-&nbsp;    @Column(name = &quot;referencia_externa&quot;)
-&nbsp;    private String externalReference;
+&nbsp;    @Column(name = &quot;numero&quot;)
+&nbsp;    private String streetNumber;
 &nbsp;
-&nbsp;    @Column(name = &quot;titulo&quot;)
-&nbsp;    private String title;
+&nbsp;    @Column(name = &quot;logradouro&quot;)
+&nbsp;    private String streetName;
 &nbsp;
-&nbsp;    @Column(name = &quot;descricao&quot;)
-&nbsp;    private String description;
+&nbsp;    @Column(name = &quot;cidade&quot;)
+&nbsp;    private String cityName;
 &nbsp;
-&nbsp;    @Column(name = &quot;url_notificacao&quot;)
-&nbsp;    private String notificationUrl;
+&nbsp;    @Column(name = &quot;estado&quot;)
+&nbsp;    private String stateName;
 &nbsp;
-&nbsp;    @Column(name = &quot;valor_total&quot;)
-&nbsp;    private Double totalAmount;
-&nbsp;
+&nbsp;    @Column(name = &quot;referencia&quot;)
+&nbsp;    private String reference;
 &nbsp;
 &nbsp;}
+&nbsp;
 </code>
 </pre>
 </div>
@@ -103,7 +104,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-07-13 23:57</div>
+    <div style="float:right;">generated on 2025-07-14 00:22</div>
 </div>
 </body>
 </html>
