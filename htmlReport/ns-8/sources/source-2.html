@@ -1,0 +1,119 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ItemPedido</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">br.com.fiap.fastfood.payment.model</a>
+</div>
+
+<h1>Coverage Summary for Class: ItemPedido (br.com.fiap.fastfood.payment.model)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+</tr>
+  <tr>
+    <td class="name">ItemPedido$HibernateInstantiator</td>
+  </tr>
+  <tr>
+    <td class="name">ItemPedido$HibernateProxy</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package br.com.fiap.fastfood.payment.model;
+&nbsp;
+&nbsp;import jakarta.persistence.*;
+&nbsp;import lombok.*;
+&nbsp;
+&nbsp;import java.math.BigDecimal;
+&nbsp;
+&nbsp;@Getter
+&nbsp;@Setter
+&nbsp;@Entity
+&nbsp;@Table(name = &quot;item_pedido&quot;)
+&nbsp;@AllArgsConstructor
+&nbsp;@NoArgsConstructor
+&nbsp;@ToString
+&nbsp;public class ItemPedido {
+&nbsp;
+&nbsp;    @Id
+&nbsp;    @GeneratedValue(strategy = GenerationType.IDENTITY)
+&nbsp;    private Long id;
+&nbsp;
+&nbsp;    @Column(name = &quot;codigo_produto&quot;)
+&nbsp;    private String skuNumber;
+&nbsp;
+&nbsp;    @Column(name = &quot;categoria&quot;)
+&nbsp;    private String category;
+&nbsp;
+&nbsp;    @Column(name = &quot;titulo&quot;)
+&nbsp;    private String title;
+&nbsp;
+&nbsp;    @Column(name = &quot;descricao&quot;)
+&nbsp;    private String description;
+&nbsp;
+&nbsp;    @Column(name = &quot;preco_unitario&quot;)
+&nbsp;    private BigDecimal unitPrice;
+&nbsp;
+&nbsp;    @Column(name = &quot;quantidade&quot;)
+&nbsp;    private int quantity;
+&nbsp;
+&nbsp;    @Column(name = &quot;valor_total&quot;)
+&nbsp;    private BigDecimal totalAmount;
+&nbsp;
+&nbsp;    @ManyToOne
+&nbsp;    @JoinColumn(name = &quot;pedido_id&quot;)
+&nbsp;    private Pedido pedido;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-07-13 23:57</div>
+</div>
+</body>
+</html>

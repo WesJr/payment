@@ -1,0 +1,163 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > LojaService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">br.com.fiap.fastfood.payment.service</a>
+</div>
+
+<h1>Coverage Summary for Class: LojaService (br.com.fiap.fastfood.payment.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LojaService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (21/21)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package br.com.fiap.fastfood.payment.service;
+&nbsp;
+&nbsp;import br.com.fiap.fastfood.payment.model.Endereco;
+&nbsp;import br.com.fiap.fastfood.payment.model.Loja;
+&nbsp;import br.com.fiap.fastfood.payment.proxy.LojaProxy;
+&nbsp;import br.com.fiap.fastfood.payment.repository.LojaRepository;
+&nbsp;import br.com.fiap.fastfood.payment.request.LojaRequest;
+&nbsp;import br.com.fiap.fastfood.payment.response.LojaResponse;
+&nbsp;import br.com.fiap.fastfood.payment.response.LojaResponsePaginada;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;@Service
+&nbsp;public class LojaService {
+&nbsp;
+&nbsp;    private final LojaProxy proxy;
+&nbsp;    private final LojaRepository repository;
+&nbsp;    private final EnderecoService enderecoService;
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;    public LojaService(LojaProxy proxy, LojaRepository repository, EnderecoService enderecoService) {</b>
+<b class="fc">&nbsp;        this.proxy = proxy;</b>
+<b class="fc">&nbsp;        this.repository = repository;</b>
+<b class="fc">&nbsp;        this.enderecoService = enderecoService;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public LojaResponse criarLoja(String userId, LojaRequest lojaRequest) {
+&nbsp;
+<b class="fc">&nbsp;        Endereco endereco = new Endereco();</b>
+<b class="fc">&nbsp;        endereco.setStateName(lojaRequest.getLocation().getStreetName());</b>
+<b class="fc">&nbsp;        endereco.setStreetNumber(lojaRequest.getLocation().getStreetNumber());</b>
+<b class="fc">&nbsp;        endereco.setCityName(lojaRequest.getLocation().getCityName());</b>
+<b class="fc">&nbsp;        endereco.setStateName(lojaRequest.getLocation().getStateName());</b>
+<b class="fc">&nbsp;        endereco.setReference(lojaRequest.getLocation().getReference());</b>
+&nbsp;
+<b class="fc">&nbsp;        Endereco endereco1 = enderecoService.save(endereco);</b>
+&nbsp;
+<b class="fc">&nbsp;        Loja loja = new Loja();</b>
+<b class="fc">&nbsp;        loja.setName(lojaRequest.getName());</b>
+<b class="fc">&nbsp;        loja.setDateCreated(loja.getDateCreated());</b>
+<b class="fc">&nbsp;        loja.setExternalId(loja.getExternalId());</b>
+<b class="fc">&nbsp;        loja.setEndereco(endereco1);</b>
+&nbsp;
+<b class="fc">&nbsp;        repository.save(loja);</b>
+&nbsp;
+<b class="fc">&nbsp;        return proxy.criarLoja(userId, lojaRequest);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public LojaResponsePaginada buscarLojas(String userId, String externalId) {
+<b class="fc">&nbsp;        return proxy.buscarLojas(userId, externalId);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public LojaResponse obterLoja(String id) {
+<b class="fc">&nbsp;        return proxy.obterLoja(id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Loja getLojaByExternalId(String externalId) {
+<b class="fc">&nbsp;        return repository.findByExternalId(externalId);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-07-13 23:57</div>
+</div>
+</body>
+</html>

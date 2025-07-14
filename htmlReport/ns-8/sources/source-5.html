@@ -1,0 +1,109 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Caixa</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">br.com.fiap.fastfood.payment.model</a>
+</div>
+
+<h1>Coverage Summary for Class: Caixa (br.com.fiap.fastfood.payment.model)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+</tr>
+  <tr>
+    <td class="name">Caixa$HibernateInstantiator</td>
+  </tr>
+  <tr>
+    <td class="name">Caixa$HibernateProxy</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package br.com.fiap.fastfood.payment.model;
+&nbsp;
+&nbsp;import jakarta.persistence.*;
+&nbsp;import lombok.*;
+&nbsp;
+&nbsp;@Getter
+&nbsp;@Setter
+&nbsp;@Entity
+&nbsp;@Table(name = &quot;caixa&quot;)
+&nbsp;@AllArgsConstructor
+&nbsp;@NoArgsConstructor
+&nbsp;@ToString
+&nbsp;public class Caixa {
+&nbsp;
+&nbsp;    @Id
+&nbsp;    @GeneratedValue(strategy = GenerationType.IDENTITY)
+&nbsp;    private Long id;
+&nbsp;
+&nbsp;    @Column(name = &quot;nome&quot;)
+&nbsp;    private String name;
+&nbsp;
+&nbsp;    @Column(name = &quot;valor_fixo&quot;)
+&nbsp;    private boolean fixedAmout;
+&nbsp;
+&nbsp;    @OneToOne(cascade = CascadeType.ALL)
+&nbsp;    @JoinColumn(name = &quot;loja_id&quot;, referencedColumnName = &quot;id&quot;)
+&nbsp;    private Loja loja;
+&nbsp;
+&nbsp;    @Column(name = &quot;id_externo&quot;, unique = true)
+&nbsp;    private String externalId;
+&nbsp;
+&nbsp;    @Column(name = &quot;categoria&quot;)
+&nbsp;    private Integer category;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-07-13 23:57</div>
+</div>
+</body>
+</html>
