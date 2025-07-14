@@ -1,9 +1,7 @@
 package br.com.fiap.fastfood.payment.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 
 @Getter
@@ -11,6 +9,8 @@ import lombok.ToString;
 @Entity
 @Table(name = "endereco")
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Endereco {
 
     @Id
