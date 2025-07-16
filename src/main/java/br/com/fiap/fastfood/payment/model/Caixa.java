@@ -1,13 +1,15 @@
 package br.com.fiap.fastfood.payment.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "caixa")
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Caixa {
 
     @Id

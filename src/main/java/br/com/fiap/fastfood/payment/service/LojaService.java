@@ -7,20 +7,21 @@ import br.com.fiap.fastfood.payment.repository.LojaRepository;
 import br.com.fiap.fastfood.payment.request.LojaRequest;
 import br.com.fiap.fastfood.payment.response.LojaResponse;
 import br.com.fiap.fastfood.payment.response.LojaResponsePaginada;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class LojaService {
 
-    @Autowired
-    LojaProxy proxy;
+    private final LojaProxy proxy;
+    private final LojaRepository repository;
+    private final EnderecoService enderecoService;
 
-    @Autowired
-    LojaRepository repository;
 
-    @Autowired
-    EnderecoService enderecoService;
+    public LojaService(LojaProxy proxy, LojaRepository repository, EnderecoService enderecoService) {
+        this.proxy = proxy;
+        this.repository = repository;
+        this.enderecoService = enderecoService;
+    }
 
     public LojaResponse criarLoja(String userId, LojaRequest lojaRequest) {
 

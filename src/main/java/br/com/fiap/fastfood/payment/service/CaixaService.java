@@ -5,20 +5,20 @@ import br.com.fiap.fastfood.payment.proxy.CaixaProxy;
 import br.com.fiap.fastfood.payment.repository.CaixaRepository;
 import br.com.fiap.fastfood.payment.request.CaixaRequest;
 import br.com.fiap.fastfood.payment.response.CaixaResponse;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CaixaService {
 
-    @Autowired
-    CaixaProxy proxy;
+    private final CaixaProxy proxy;
+    private final CaixaRepository repository;
+    private final LojaService lojaService;
 
-    @Autowired
-    CaixaRepository repository;
-
-    @Autowired
-    LojaService lojaService;
+    public CaixaService(CaixaProxy proxy, CaixaRepository repository, LojaService lojaService) {
+        this.proxy = proxy;
+        this.repository = repository;
+        this.lojaService = lojaService;
+    }
 
     public CaixaResponse createCaixa(CaixaRequest request) {
         Caixa caixa = new Caixa();

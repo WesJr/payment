@@ -1,0 +1,114 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ItemPedidoRequest</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">br.com.fiap.fastfood.payment.request</a>
+</div>
+
+<h1>Coverage Summary for Class: ItemPedidoRequest (br.com.fiap.fastfood.payment.request)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">ItemPedidoRequest</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package br.com.fiap.fastfood.payment.request;
+&nbsp;
+&nbsp;import com.fasterxml.jackson.annotation.JsonAlias;
+&nbsp;import com.fasterxml.jackson.annotation.JsonProperty;
+&nbsp;import lombok.AllArgsConstructor;
+&nbsp;import lombok.Getter;
+&nbsp;import lombok.NoArgsConstructor;
+&nbsp;import lombok.Setter;
+&nbsp;
+&nbsp;import java.math.BigDecimal;
+&nbsp;
+&nbsp;@Getter
+&nbsp;@Setter
+&nbsp;@AllArgsConstructor
+&nbsp;@NoArgsConstructor
+&nbsp;public class ItemPedidoRequest {
+&nbsp;
+&nbsp;    @JsonProperty(&quot;sku_number&quot;)
+&nbsp;    @JsonAlias({&quot;sku_number&quot;})
+&nbsp;    private String skuNumber;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;category&quot;)
+&nbsp;    private String category;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;title&quot;)
+&nbsp;    private String title;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;description&quot;)
+&nbsp;    private String description;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;unit_price&quot;)
+&nbsp;    @JsonAlias({&quot;unit_price&quot;})
+&nbsp;    private BigDecimal unitPrice;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;quantity&quot;)
+&nbsp;    private int quantity;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;unit_measure&quot;)
+&nbsp;    @JsonAlias({&quot;unit_measure&quot;})
+&nbsp;    private String unitMeasure;
+&nbsp;
+&nbsp;    @JsonProperty(&quot;total_amount&quot;)
+&nbsp;    @JsonAlias({&quot;total_amount&quot;})
+&nbsp;    private BigDecimal totalAmount;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-07-14 00:22</div>
+</div>
+</body>
+</html>

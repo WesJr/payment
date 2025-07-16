@@ -4,15 +4,17 @@ import br.com.fiap.fastfood.payment.request.LojaRequest;
 import br.com.fiap.fastfood.payment.response.LojaResponse;
 import br.com.fiap.fastfood.payment.response.LojaResponsePaginada;
 import br.com.fiap.fastfood.payment.service.LojaService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/loja")
 public class LojaFisicaController {
 
-    @Autowired
-    LojaService service;
+    private final LojaService service;
+
+    public LojaFisicaController(LojaService service) {
+        this.service = service;
+    }
 
     @PostMapping("users/{user_id}/stores")
     public LojaResponse criarLoja(@PathVariable("user_id") String userId, @RequestBody LojaRequest lojaRequest) {

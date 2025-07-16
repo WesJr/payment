@@ -1,10 +1,12 @@
 package br.com.fiap.fastfood.payment.response;
 
 import br.com.fiap.fastfood.payment.request.ItemPedidoRequest;
-import br.com.fiap.fastfood.payment.request.cashOutRequest;
+import br.com.fiap.fastfood.payment.request.CashOutRequest;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
@@ -12,6 +14,8 @@ import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class PedidoResponse {
 
     @JsonProperty("external_reference")
@@ -42,7 +46,7 @@ public class PedidoResponse {
 
     @JsonProperty("cash_out")
     @JsonAlias("cash_out")
-    private cashOutRequest cashOut;
+    private CashOutRequest cashOut;
 
     @JsonProperty("sponsor")
     private SponsorRequest sponsor;

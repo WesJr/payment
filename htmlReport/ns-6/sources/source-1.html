@@ -1,0 +1,143 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > CaixaService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">br.com.fiap.fastfood.payment.service</a>
+</div>
+
+<h1>Coverage Summary for Class: CaixaService (br.com.fiap.fastfood.payment.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CaixaService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (13/13)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package br.com.fiap.fastfood.payment.service;
+&nbsp;
+&nbsp;import br.com.fiap.fastfood.payment.model.Caixa;
+&nbsp;import br.com.fiap.fastfood.payment.proxy.CaixaProxy;
+&nbsp;import br.com.fiap.fastfood.payment.repository.CaixaRepository;
+&nbsp;import br.com.fiap.fastfood.payment.request.CaixaRequest;
+&nbsp;import br.com.fiap.fastfood.payment.response.CaixaResponse;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;@Service
+&nbsp;public class CaixaService {
+&nbsp;
+&nbsp;    private final CaixaProxy proxy;
+&nbsp;    private final CaixaRepository repository;
+&nbsp;    private final LojaService lojaService;
+&nbsp;
+<b class="fc">&nbsp;    public CaixaService(CaixaProxy proxy, CaixaRepository repository, LojaService lojaService) {</b>
+<b class="fc">&nbsp;        this.proxy = proxy;</b>
+<b class="fc">&nbsp;        this.repository = repository;</b>
+<b class="fc">&nbsp;        this.lojaService = lojaService;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public CaixaResponse createCaixa(CaixaRequest request) {
+<b class="fc">&nbsp;        Caixa caixa = new Caixa();</b>
+&nbsp;
+<b class="fc">&nbsp;        caixa.setName(request.getName());</b>
+<b class="fc">&nbsp;        caixa.setFixedAmout(request.isFixedAmout());</b>
+<b class="fc">&nbsp;        caixa.setExternalId(request.getExternalId());</b>
+<b class="fc">&nbsp;        caixa.setCategory(request.getCategory());</b>
+<b class="fc">&nbsp;        caixa.setLoja(lojaService.getLojaByExternalId(request.getExternalStoreId()));</b>
+&nbsp;
+<b class="fc">&nbsp;        repository.save(caixa);</b>
+<b class="fc">&nbsp;        return proxy.criarCaixa(request);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public CaixaResponse getCaixaById(String id) {
+<b class="fc">&nbsp;        return proxy.getCaixaById(id);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-07-14 00:22</div>
+</div>
+</body>
+</html>
